@@ -1,15 +1,19 @@
-import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-import Home from './Home';
+import { useContext, useEffect, useState } from "react";
+import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
+import { AuthContext } from "./Context/AuthContext";
+import Home from "./Home";
 
 function App() {
-
+  const [Auth, setAuth] = useState();
+  useEffect(() => {
+      setAuth(JSON.parse(sessionStorage.getItem('user')))
+  },[])
   return (
-   <>
-    <Navbar />
-       <Home/>
-
-   </>
+    <AuthContext.Provider value={{ Auth, setAuth }}>
+      <Navbar />
+      <Home />
+    </AuthContext.Provider>
   );
 }
 

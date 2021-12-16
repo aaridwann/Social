@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Context/AuthContext";
 
-export default function HeroSect() {
+export default function HeroSect(props) {
+  const {Auth, setAuth} = useContext(AuthContext)
+  
+  const logout = () => {
+  sessionStorage.clear();
+  setAuth(null)
+   
+  }
   return (
     <div className=" bg-pink-cust  ">
       <div className="container flex h-771 flex-row-3 gap-2 py-28  mx-auto items-center px-20 rounded-3xl">
@@ -13,14 +21,25 @@ export default function HeroSect() {
             ANYWHERE ANYTIME
           </p>
           <div className="flex flex-row gap-4 justify-end mr-10 my-4 text-white ">
-            <button className="bg-pink-tua rounded-xl px-5 py-1 duration-200 hover:shadow-lg
+            {!Auth ?
+            <button onClick={props.change}  className="bg-pink-tua rounded-xl px-5 py-1 duration-200 hover:shadow-lg
             font-[Yellowtail]
              ">
               Login
+            </button> 
+            
+            
+            :
+            <button onClick={() => logout()}  className="bg-pink-tua rounded-xl px-5 py-1 duration-200 hover:shadow-lg
+            font-[Yellowtail]
+             ">
+              Logout
             </button>
-            <button className=" text-gray-500 font-[Yantramanav] text-lg font-bold
+            }
+           {!Auth &&  <button className=" text-gray-500 font-[Yantramanav] text-lg font-bold
             hover:border-2 border-pink-tua rounded-3xl px-4 duration-200
             ">Sign up</button>
+            }
           </div>
         </div>
         {/* END HERRO KIRI */}

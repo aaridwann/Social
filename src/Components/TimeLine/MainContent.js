@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
+import { Slide } from 'react-awesome-reveal'
 
 export default function MainContent(props) {
   const [show,setShow] = useState(false)
+  const [stateComment, setStateComment] = useState(false)
     return (
         <div>
         {/* Content */}
         <div className="grid grid-cols-5 mx-auto gap-2 w-9/12 bg-white border-2 border-zinc-200 rounded-3xl px-6 py-4 ">
           {/* Profile  Top*/}
-          <div className="col-span-5 bg-white border-2 border-gray-200 rounded-3xl px-2 py-1 flex items-center gap-2">
+          <div className="col-span-5 bg-white border-2 border-zinc-200 rounded-3xl px-2 py-1 flex items-center gap-2">
             <figure className="w-12 h-12 overflow-hidden rounded-full border-2 border-gray-300 flex items-center ">
-              <img src={props.img}  className="object-cover bg-center h-full" />
+              <img src={props.img} alt="img" className="object-cover bg-center h-full" />
             </figure>
             <div className="flex flex-col">
               <h1 className=" font-semibold text-lg ">Ridwan</h1>
@@ -24,7 +26,8 @@ export default function MainContent(props) {
           {/* SideBar */}
           <div className="col-span-1 w-16 ">
             <div className={`${show ? 'h-96 py-6': 'h-auto py-1 px-1'}  flex flex-col gap-4 justify-between  items-center bg-matcha-light  rounded-3xl `}>
-              <button onClick={()=>setShow(!show)} className="text-white">
+        
+              <button onClick={()=>setShow(!show)} className="text-white hover:bg-matcha-dark duration-300 p-2 rounded-full">
                 <svg
                   width="24px"
                   height="24px"
@@ -40,8 +43,10 @@ export default function MainContent(props) {
                 </svg>
               </button>
         {show && 
+          <Slide>
+             
               <div className="flex flex-col gap-4 justify-center items-center">
-                <button className="text-white">
+                <button onClick={() => setStateComment(!stateComment)} className="text-white">
                   <svg
                     width="24"
                     height="24"
@@ -87,6 +92,7 @@ export default function MainContent(props) {
                   </svg>
                 </button>
               </div>
+              </Slide>
             }
             </div>
           </div>
@@ -94,7 +100,7 @@ export default function MainContent(props) {
 
           <div className="col-span-4 flex items-center justify-center ">
             <figure className="overflow-hidden h-96 w-96  rounded-3xl">
-              <img src={props.img} className="object-cover bg-center h-full rounded-3xl "/>
+              <img src={props.img} alt='img' className="object-cover bg-center h-full rounded-3xl "/>
             </figure>
           </div>
 
@@ -104,17 +110,20 @@ export default function MainContent(props) {
           </div>
 
           {/* Coment Columnt */}
+          {stateComment && 
           <div className="col-span-5   p-4 flex flex-col ">
             <input
               placeholder="Comment here..."
               type="text"
               name="comment"
-              className="border-2 border-gray-400 rounded-3xl p-4 "
+              className="border-2 border-zinc-200 rounded-3xl p-4 focus:outline-none text-zinc-400 "
             />
-            <button className=" self-end rounded-2xl bg-gray-400 text-white px-4 py-1 mt-2 ">
+            <button className=" font-semibold self-end rounded-2xl bg-zinc-300 hover:bg-zinc-500 transition duration-500 text-white px-4 py-1 mt-2 ">
               Submit
             </button>
           </div>
+          }
+
         </div>
         </div>
     )

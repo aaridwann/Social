@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Slide } from "react-awesome-reveal";
 import HeroSect from "./Components/HeroSection/HeroSect";
 import Navbar from "./Components/Navbar/Navbar";
 import Products from "./Components/Products/Products";

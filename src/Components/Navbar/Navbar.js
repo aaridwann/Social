@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "react-scroll/modules/components/Link";
+import { AuthContext } from "../../Context/AuthContext";
+import Timeline from "../../Timeline";
+import { Link as LINK } from "react-router-dom";
+
 
 export default function Navbar() {
   return (
@@ -11,7 +15,8 @@ export default function Navbar() {
         <ul className="flex flex-row mx-auto justify-start ml-72 gap-4 text-lg font-[Yantramanav] text-pink-cust">
         <button className="hover:text-pink-tua duration-200 font-semibold text-lg font-[Yantramanav]">Home</button>
         <Link to="profile" smooth={true} duration={2000}><button className="hover:text-pink-tua duration-200 font-bold text-lg font-[Yantramanav]">Profile</button></Link>
-        <Link to="products" smooth={true} duration={2000}><button className="hover:text-pink-tua duration-200 font-bold text-lg font-[Yantramanav]">Product</button></Link>
+        <LINK to="/home"><Link to="products" smooth={true} duration={2000}><button className="hover:text-pink-tua duration-200 font-bold text-lg font-[Yantramanav]">Product</button></Link></LINK>
+        <LINK to="/timeline"> <button  className="hover:text-pink-tua duration-200 font-bold text-lg font-[Yantramanav]">Timeline</button></LINK> 
         </ul>
       </div>
     </nav>

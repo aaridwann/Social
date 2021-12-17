@@ -1,20 +1,25 @@
-import { useContext, useEffect, useState } from "react";
-import "./App.css";
-import Navbar from "./Components/Navbar/Navbar";
+import React, { Fragment, useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthContext } from "./Context/AuthContext";
 import Home from "./Home";
+import Timeline from "./Timeline";
 
-function App() {
-  const [Auth, setAuth] = useState();
+export const App = () => {
+  const [Auth, setAuth] = useState(JSON.parse(sessionStorage.getItem('user')));
+
   useEffect(() => {
-      setAuth(JSON.parse(sessionStorage.getItem('user')))
-  },[])
+   
+  },[Auth])
   return (
     <AuthContext.Provider value={{ Auth, setAuth }}>
-      <Navbar />
-      <Home />
+      <BrowserRouter>
+        <Fragment>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/timeline" element={<Timeline />} />
+          </Routes>
+        </Fragment>
+      </BrowserRouter>
     </AuthContext.Provider>
   );
-}
-
-export default App;
+};

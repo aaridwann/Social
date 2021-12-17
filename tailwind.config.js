@@ -9,7 +9,10 @@ module.exports = {
         "pink-cust": "#FFE2E2",
         'pink-tua': '#FFB9B9',
         'coklat': '#E8DBCD',
-        'coklat-muda': '#E9D5C5'
+        'coklat-muda': '#E9D5C5',
+        'matcha-dark': '#6B705C',
+        'mathca':'#A5A58D',
+        'matcha-light':'#B7B7A4'
       },
       letterSpacing: {
         lebar: '0.75em',
@@ -26,6 +29,9 @@ module.exports = {
       borderRadius:{
         'extra': '150px',
         'extraLG': '250px'
+      },
+      zIndex:{
+        '100':'100'
       }
     },
   },

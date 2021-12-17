@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import HeroSect from "./Components/HeroSection/HeroSect";
+import Navbar from "./Components/Navbar/Navbar";
 import Products from "./Components/Products/Products";
 import Profile from "./Components/Profile/Profile";
 import { AuthContext } from "./Context/AuthContext";
@@ -12,6 +13,7 @@ export default function Home() {
     console.log(Auth);
   return (
     <div>
+      <Navbar />
       <HeroSect change={change} />
       {!Auth && modalLogin && <Login change={change} />}
       <Profile />

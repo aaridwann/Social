@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { Slide } from 'react-awesome-reveal'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
+const loading = <h1 className="text-center text-4xl font-bold text-matcha-dark">Loading...</h1>
 
 export default function MainContent(props) {
   const [show,setShow] = useState(false)
@@ -11,7 +14,7 @@ export default function MainContent(props) {
           {/* Profile  Top*/}
           <div className="col-span-5 bg-white border-2 border-zinc-200 rounded-3xl px-2 py-1 flex items-center gap-2">
             <figure className="w-12 h-12 overflow-hidden rounded-full border-2 border-gray-300 flex items-center ">
-              <img src={props.img} alt="img" className="object-cover bg-center h-full" />
+              <LazyLoadImage effect='blur' height='100%' src={props.img} alt="img" className="object-cover bg-center h-full" />
             </figure>
             <div className="flex flex-col">
               <h1 className=" font-semibold text-lg ">Ridwan</h1>
@@ -100,7 +103,7 @@ export default function MainContent(props) {
 
           <div className="col-span-4 flex items-center justify-center ">
             <figure className="overflow-hidden h-96 w-96  rounded-3xl">
-              <img src={props.img} alt='img' className="object-cover bg-center h-full rounded-3xl "/>
+              <LazyLoadImage effect='blur' height='100%' src={props.img} alt='img' className="object-cover bg-center h-full rounded-3xl "/>
             </figure>
           </div>
 

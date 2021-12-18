@@ -1,4 +1,6 @@
 import React from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function CardProfile() {
     return (
@@ -7,7 +9,7 @@ export default function CardProfile() {
           {/* 1 */}
           <div className="bg-mathca p-4 rounded-tr-extra rounded-bl-extra h-48 flex items-center justify-center">
             <figure className="rounded-full overflow-hidden w-40 h-40">
-              <img src="./assets/img/Avatar.jpg" alt="ava" />
+              <LazyLoadImage effect='blur' height='100%' src="./assets/img/Avatar.jpg" alt="ava" />
             </figure>
           </div>
           {/* 2 */}

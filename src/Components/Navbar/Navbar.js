@@ -16,7 +16,6 @@ export default function Navbar() {
         <button className="hover:text-pink-tua duration-200 font-semibold text-lg font-[Yantramanav]">Home</button>
         <Link to="profile" smooth={true} duration={2000}><button className="hover:text-pink-tua duration-200 font-bold text-lg font-[Yantramanav]">Profile</button></Link>
         <LINK to="/home"><Link to="products" smooth={true} duration={2000}><button className="hover:text-pink-tua duration-200 font-bold text-lg font-[Yantramanav]">Product</button></Link></LINK>
-       
         {Auth &&  <LINK to="/timeline"> <button  className="hover:text-pink-tua duration-200 font-bold text-lg font-[Yantramanav]">Timeline</button></LINK> }
         </ul>
       </div>

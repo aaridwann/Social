@@ -9,6 +9,8 @@ const HeroSect = React.lazy(() => import('./Components/HeroSection/HeroSect'))
 const Products = React.lazy(() => import('./Components/Products/Products'))
 const Profile = React.lazy(() => import('./Components/Profile/Profile'))
 
+const loading = <h1 className="text-center text-4xl font-bold text-matcha-dark">Loading...</h1>
+
 export default function Home() {
     const {Auth, setAuth} = useContext(AuthContext)
     const [modalLogin, setModalLogin] = useState(false)
@@ -17,15 +19,13 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Suspense fallback='Loading..'>
+      <Suspense fallback={loading}>
+      <section>
       <HeroSect change={change} />
-      </Suspense>
-      <Suspense fallback='Loading..'>
       {!Auth && modalLogin && <Login change={change} />}
       <Profile />
-      </Suspense>
-      <Suspense fallback='Loading..'>
       <Products />
+      </section>
       </Suspense>
     </div>
   );

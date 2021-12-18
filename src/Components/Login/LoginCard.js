@@ -40,7 +40,7 @@ export default function LoginCard(props) {
   return (
     <form
       onSubmit={(e) => submit(e)}
-      className=" backdrop-blur-xl bg-matcha-light/30 flex flex-col gap-4 justify-center items-center w-854 px-28 py-24 fixed rounded-3xl z-50 bg-white opacity-80 mx-auto -translate-y-1/2  -translate-x-1/2 top-1/2 left-1/2 "
+      className=" backdrop-blur-xl bg-matcha-light/30 flex flex-col gap-4 justify-center items-center w-854 px-28 py-24 fixed rounded-3xl z-100  bg-white opacity-80 mx-auto -translate-y-1/2  -translate-x-1/2 top-1/2 left-1/2 "
     >
       <button
         onClick={props.change}

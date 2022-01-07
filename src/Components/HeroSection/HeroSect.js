@@ -10,11 +10,11 @@ export default function HeroSect(props) {
    
   }
   return (
-    <div className=" bg-pink-cust  ">
-      <div className="container flex h-771 flex-row-3 gap-2 py-28  mx-auto items-center px-20 rounded-3xl">
+    <div className="bg-pink-cust w-full overflow-hidden">
+      <div className="container flex h-771 flex-col-reverse lg:flex-row-reverse lg:flex-row-3 gap-2 py-28 justify-center mx-auto items-center px-20 rounded-3xl">
         {/* Herro Kiri */}
-        <div className=" col-span-1 items-center mx-auto justify-center">
-          <h1 className="text-5xl text-white font-extrabold tracking-lebar ">
+        <div className="col-span-1 items-center mx-auto justify-center">
+          <h1 className="text-5xl text-white font-extrabold tracking-widest lg:tracking-lebar">
             FLEXIBLE
           </h1>
           <p className="text-white tracking-lebar2 mt-4 font-semibold">
@@ -27,8 +27,6 @@ export default function HeroSect(props) {
              ">
               Login
             </button> 
-            
-            
             :
             <button onClick={() => logout()}  className="bg-pink-tua rounded-xl px-5 py-1 duration-200 hover:shadow-lg
             font-[Yellowtail]
@@ -44,8 +42,8 @@ export default function HeroSect(props) {
         </div>
         {/* END HERRO KIRI */}
 
-        <div className="flex h-72 w-10/12 items-center bg-local col-span-2 overflow-hidden  rounded-br-full rounded-tl-full ">
-          <img src="./assets/img/interior.jpg" alt="home" className="w-full " />
+        <div className="flex h-72 w-96 lg:w-10/12 items-center bg-local col-span-2 bg-blue-700 overflow-hidden rounded-br-full rounded-tl-full ">
+          <img src="./assets/img/interior.jpg" alt="home" className="h-auto w-full lg:h-auto lg:w-full"/>
         </div>
       </div>
     </div>

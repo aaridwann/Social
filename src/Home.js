@@ -15,10 +15,10 @@ export default function Home() {
     const {Auth, setAuth} = useContext(AuthContext)
     const [modalLogin, setModalLogin] = useState(false)
     const change = () => setModalLogin(!modalLogin)
-    console.log(Auth);
-  return (
+    return (
     <div>
-      <Navbar />
+    <title>Home</title>
+      <Navbar className='fixed'  />
       <Suspense fallback={loading}>
       <section>
       <HeroSect change={change} />

@@ -8,56 +8,59 @@ export default function Products() {
   return (
     <div className="flex flex-col mb-60 mt-10 overflow-hidden " id="products" >
       <div className="absolute left-1/4 gap-0">
-        <h3 className="font-[Yantramanav] text-6xl text-gray-600 text-right font-extralight">
+        <h3 className="font-[Yantramanav] text-6xl text-gray-600 text-left md:text-right font-extralight">
           OUR
         </h3>
         <h1 className="font-[Yantramanav] font-extrabold text-6xl -mt-4 text-gray-600 tracking-tighter">
           PRODUCTS
         </h1>
       </div>
-      <div className="self-end bg-pink-cust 2xl:w-5/12 lg:w-6/12 2xl:h-771 lg:h-full 2xl:pb-0 lg:pb-56 p-10">
-        <div className="flex flex-row gap-3 2xl:mt-8 lg:mt-2 ml-8">
+
+
+
+      <div className="self-end bg-pink-cust w-60 md:w-2/5 md:h-full md:pb-56 p-10 mt-28 md:mt-0 ">
+        <div className="flex flex-col md:flex-row gap-3 2xl:mt-8 lg:mt-2 md:ml-8 ml-14">
       <Slide cascade={true} dumping={1} direction={"right"}>
-          <div className="w-72 text-right px-4 py-2 bg-white hover:bg-pink-cust duration-300 ">
-            <h1 className="font-extrabold 2xl:text-3xl lg:text-xl text-pink-cust hover:text-white duration-300 ">
+          <div className="w-36 md:w-72 text-left md:text-right px-4 py-2 bg-white hover:bg-pink-cust duration-300 ">
+            <h1 className="font-extrabold md:text-3xl text-xl text-pink-cust hover:text-white duration-300 ">
               Sweater
             </h1>
           </div>
-          <div className=" w-72 text-right px-4 py-2 bg-white hover:bg-pink-cust duration-300">
-            <h1 className="font-extrabold 2xl:text-3xl lg:text-xl text-pink-cust hover:text-white duration-300">
+          <div className="w-36 text-left md:text-right px-4 py-2 bg-white hover:bg-pink-cust duration-300">
+            <h1 className="font-extrabold md:text-3xl text-xl text-pink-cust hover:text-white duration-300">
               Sneakers
             </h1>
           </div>
-          <div className=" w-72 text-right px-4 py-2 bg-white hover:bg-pink-cust duration-300">
-            <h1 className="font-extrabold 2xl:text-3xl lg:text-xl text-pink-cust hover:text-white duration-300">
+          <div className=" w-36 text-left md:text-right px-4 py-2 bg-white hover:bg-pink-cust duration-300">
+            <h1 className="font-extrabold md:text-3xl text-xl text-pink-cust hover:text-white duration-300">
               Marchendise
             </h1>
           </div>
           </Slide>
         </div>
-        <div className="text-right mt-36 mr-20 ">
+        <div className="text-right mt-4 md:mt-36 -mr-10 md:mr-20 ">
         <Slide delay={300} fraction={1} cascade={true}>
-          <h2 className="font-[Yantramanav] font-extrabold 2xl:text-6xl lg:text-4xl text-white">
+          <h2 className="font-[Yantramanav] font-extrabold md:text-6xl text-4xl text-white">
             More than{" "}
           </h2>
-          <h1 className="font-[Yantramanav] font-extrabold 2xl:text-9xl lg:text-7xl  text-red-900">
-            1 million{" "}
+          <h1 className="font-[Yantramanav] font-extrabold md:text-9xl text-6xl  text-red-900">
+            <p className=" text-center md:text-right">1</p> million{" "}
           </h1>
-          <h2 className="font-[Yantramanav] font-extrabold 2xl:text-6xl lg:text-4xl text-white">
+          <h2 className="font-[Yantramanav] font-extrabold md:text-6xl text-2xl text-white">
             products from{" "}
           </h2>
-          <h2 className="font-[Yantramanav] font-extrabold 2xl:text-6xl lg:text-4xl text-white">
+          <h2 className="font-[Yantramanav] font-extrabold md:text-6xl text-xl text-white">
             all over the world
           </h2>
           </Slide>
         </div>
       </div>
 
-      <div className="absolute z-50 w-4/6 mt-40 bg-coklat-muda h-771 flex items-center ">
-        <div className="flex mx-auto justify-center items-center">
-          <div className={`${img ? " block transition duration-300 ease-in " : "hidden"}  ease-linear `}>
+      <div className="absolute p-4 md:p-0 md:z-50 w-3/5 md:w-4/6 md:mt-40 mt-48 bg-coklat-muda md:h-771 flex items-center ">
+        <div className="flex flex-col lg:flex-row mx-auto justify-center items-center">
+          <div style={{transitionDuration:'1s'}} className={`${img ?`block`:`hidden`} `}>
          <Slide direction={'left'} duration={1000}>
-            <img
+            <img style={{transitionDuration:'1s'}}
               className=" rounded-3xl"
               src="./assets/img/Jordan 2.jpg"
               alt="jordan"
@@ -66,15 +69,15 @@ export default function Products() {
           </Slide>
           </div>
 
-          <div className="p-2 bg-white 2xl:w-1/3 lg:w-3/6 2xl:ml-96 lg:ml-72 absolute -mt-20">
+          <div className="p-2 bg-white md:w-1/3 w-48 md:ml-96 absolute -mt-20">
             <h1
               onClick={() => setImg(!img)}
-              className=" text-6xl font-extrabold text-coklat-muda text-right "
+              className=" text-4xl md:text-6xl font-extrabold text-coklat-muda text-right "
             >
               AIR JORDAN
             </h1>
           </div>
-          <div className="m-4 mt-48 text-white font-light tracking-wider font-[Yantramanav]">
+          <div className="m-4 mt-48 text-white text-justify md:text-left font-light tracking-wider font-[Yantramanav]">
             <p>
               Take flight. As soon as the Air Jordan line debuted in 1985,
               <br />

@@ -20,27 +20,26 @@ export default function Timeline() {
   },[])
 
   return (
-    <div className='grid grid-cols-4 w-full bg-fuchsia-400 h-full'>
+    <div className='grid grid-cols-4 w-full shadow-xl md:w-2/4 mx-auto overflow-x-hidden bg-gray-200 h-full'>
   {/* Top */}
-  <div className='col-span-4 h-20 bg-rose-600'>
-    <div className='z-100 overflow-x-auto scroll-smooth fixed flex gap-4 justify-center items-center md:w-3/6 md:left-1/4 h-28   bg-blue-700'>
+  <div className='col-span-4 h-20 flex justify-center items-start'>
       <LazyLoadComponent>
+    <div id="story" style={{webkitScrollbars:false}} className='overflow-x-auto h-28 md:w-2/4 w-full snap-x z-100 fixed flex gap-4 items-center border-b-2 shadow-xl bg-white text-gray-600'>
       {img.map((a) => (
       <Story img={a}/>
       ))}
-      </LazyLoadComponent>
     </div>
+      </LazyLoadComponent>
   </div>
 {/* Side Bar */}
-  <div onClick={() => setNav(false)} className='col-span-1 w-16 h-20 bg-green-600 '>
-    <div className='fixed mt-4 md:left-1/4 justify-start items-center flex w-16 h-667 md:h-3/4 bg-purple-600 '>
+  <div onClick={() => setNav(false)} className='col-span-1 w-16 h-20  '>
+    <div className='fixed mt-4 md:left-1/4 justify-start items-center flex w-16 h-667 md:h-3/4  overflow-x-hidden '>
       <SideBar/>
     </div>
   </div>
 
-
 {/* content */}
-  <div onClick={() => setNav(false)} className='col-span-3 h-fit w-80 -ml-8 md:w-3/4 bg-yellow-600'>
+  <div onClick={() => setNav(false)} className='col-span-3 h-fit w-80 -ml-8 md:w-3/4 '>
       <div className='flex scroll-smooth  flex-col gap-4 mt-12 items-center justify-center'>
       <LazyLoadComponent>
       {img.map((a) => (<Content img={a}/>))}
@@ -49,15 +48,15 @@ export default function Timeline() {
   </div>
 
 {/* Botom */}
-    <div className='w-36 h-36 p-4 md:left-1/4 fixed bottom-0 flex items-center justify-center col-span-4  '>
-      <div style={{ transitionDuration:'0.5s'}} className={`${nav ? ` w-60 h-60`:` w-32 h-32`}  -ml-32 -mb-32 bg-green-300  flex justify-center items-center rounded-full`}>
-      <button onClick={() => setNav(!nav)} className=' mb-8 ml-8 text-2xl font-bold'>
-        X
-      </button>
+    <div className='w-56  h-56 p-4 md:left-1/4 fixed bottom-0 flex items-center justify-center col-span-4 overflow-hidden '>
+      <div style={{ transitionDuration:'0.5s'}} className={`${nav ? `bg-gray-400 text-white w-60 h-60 bg-opacity-60`:`bg-white text-gray-500 w-32 h-32 bg-opacity-100`} z-40  -ml-52 -mb-52  border-2 border-gray-100  flex justify-center items-center rounded-full`}>
+        <button onClick={() => (setNav(!nav), setTimeout(() => {setNav(false)},7000))} className='mb-8 ml-8 text-2xl font-bold'>
+          NAV
+        </button>
       </div>
-      <button style={{ transitionDuration:'0.4s', transitionDelay:'0.3s'}} className={`absolute ${nav ? `left-8 -top-4`:`left-2 top-48`} `}>1</button>
-      <button style={{ transitionDuration:'0.4s', transitionDelay:'0.4s'}} className={`${nav ? `left-28 top-6 `:`left-0 top-48 `} absolute `}>2</button>
-      <button style={{ transitionDuration:'0.4s', transitionDelay:'0.5s'}} className={`${nav ? `left-40  top-24`:`left-0 top-48`} absolute  `}>3</button>
+      <button style={{ transitionDuration:'0.4s', transitionDelay:'0.3s'}} className={`${nav ? `left-8 top-10`:`-left-2 top-48`} text-gray-500 font-bold absolute`}>Home</button>
+      <button style={{ transitionDuration:'0.4s', transitionDelay:'0.4s'}} className={`${nav ? `left-28 top-16 `:`-left-4 top-48`} text-gray-500 font-bold absolute`}>Profile</button>
+      <button style={{ transitionDuration:'0.4s', transitionDelay:'0.5s'}} className={`${nav ? `left-40 top-36`:`-left-4 top-48`} text-gray-500 font-bold absolute `}>About</button>
 
     </div>
 

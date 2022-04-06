@@ -4,16 +4,22 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function Content(props) {
     const loading = () => {
-        return <button class="btn text-gray-800 btn-sm btn-ghost loading">loading</button>
+        return <button className="btn text-gray-800 btn-sm btn-ghost loading">loading</button>
     }
     const [inputComment, setInputComment] = useState(false)
     const [comment, setComment] = useState(false)
     const [menu, setMenu] = useState(false)
     return (
         <>
-         <div className='w-80 md:w-11/12 py-3 flex flex-col gap-2 justify-center items-center rounded-3xl bg-white border-2 border-gray-100 shadow-xl'>
+         <div className='w-80 lg:w-4/5 py-3 flex flex-col gap-2 justify-center items-center rounded-3xl bg-white border-2 border-gray-100 shadow-xl'>
                    {/* Avatar */}
-                    <div className='bg-gray-200 h-96 w-72 2xl:w-11/12 rounded-2xl'>
+                   <div className="text-zinc-500 self-start mx-4 flex flex-row items-center gap-2">
+                       <div className='h-8 w-8 2xl:w-14 2xl:h-14 rounded-full bg-center bg-cover overflow-hidden'>
+                           <LazyLoadImage className=" bg-center bg-cover" src={props.profilePicture}/>
+                       </div>
+                        <button onClick={props.profile} className=" 2xl:text-lg font-semibold">{props.username}</button>
+                   </div>
+                    <div className='bg-gray-200 h-96 w-72 2xl:w-11/12 2xl:h-4/5 rounded-2xl'>
                         <LazyLoadImage beforeLoad={() => loading()} className='h-full w-full object-cover rounded-2xl' src={props.img}/>
                     <div className={` ${menu ? `scale-100`: `scale-0`} transition duration-500 -mt-56 w-fit h-fit rounded-xl p-4 justify-center items-start text-left bg-gray-700 text-gray-200 border border-gray-200 bg-opacity-60 absolute z-50 flex flex-col gap-2`}>
                         <button className='font-bold hover:text-gray-700 transition duration-150 hover:bg-white p-2 rounded-xl'>Report</button>
@@ -28,7 +34,7 @@ export default function Content(props) {
                     <div className='border-b-2 text-gray-500 font-semibold border-gray-300 flex justify-center items-center w-72 2xl:w-10/12 h-11'>
                         <div onClick={() => (setMenu(!menu), setTimeout(() => {setMenu(false)},7000))} className='w-3/4'><button >Menu</button></div>
                         <div className='flex gap-2 '>
-                            <button>Like</button>
+                            <button type='submit' onClick = {props.like}>Like</button>
                             <button onClick={() => setInputComment(!inputComment)}>Comment</button>
                             <button>Lock</button>
                         </div>
@@ -46,7 +52,7 @@ export default function Content(props) {
                         <input className='border-2  focus:outline-none focus:ring-1 border-gray-300 rounded-xl text-gray-500 px-4 h-11 w-72 2xl:w-full' type='text'/>
                         <button className=' self-end mx-4 btn btn-sm btn-outline outline-8 hover:bg-matcha-light hover:text-matcha-dark text-matcha-dark outline-matcha-dark'>Submit</button>
                     </div>
-                }
+                    }
 
                         {/* COmment Collom */}
                         {comment && 

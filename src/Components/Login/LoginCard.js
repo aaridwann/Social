@@ -1,7 +1,12 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
+import {useNavigate} from 'react-router-dom'
+
+
+
 export default function LoginCard(props) {
+  const navigate = useNavigate()
   const { Auth, setAuth } = useContext(AuthContext);
   const [message, setMessage] = useState();
   const [user, setUser] = useState({
@@ -22,11 +27,11 @@ export default function LoginCard(props) {
       );
     }
     try {
-      const response = await axios.post("http://localhost:3002/login", user);
-      sessionStorage.setItem("user", JSON.stringify(response.data));
+      const response = await axios.post("http://192.168.100.13:8000/auth/login", user);
+      sessionStorage.setItem("user", JSON.stringify(response.data.data));
       setUser({ name: "", password: "" });
-      setAuth(response.data);
-      // console.log(Auth)
+      setAuth(response.data.data);
+      navigate('/timeline')
     } catch (error) {
       console.log(error);
       setMessage(
@@ -40,7 +45,7 @@ export default function LoginCard(props) {
   return (
     <form
       onSubmit={(e) => submit(e)}
-      className=" backdrop-blur-xl bg-matcha-light/30 flex flex-col gap-4 justify-center items-center w-854 px-28 py-24 fixed rounded-3xl z-100  bg-white opacity-80 mx-auto -translate-y-1/2  -translate-x-1/2 top-1/2 left-1/2 "
+      className="backdrop-blur-xl bg-matcha-light/30 flex flex-col gap-4 justify-center items-center w-96 lg:w-854 px-28 py-24 fixed rounded-3xl z-100 bg-white opacity-80 mx-auto -translate-y-1/2  -translate-x-1/2 top-1/2 left-1/2 "
     >
       <button
         onClick={props.change}
@@ -56,7 +61,7 @@ export default function LoginCard(props) {
       <h1 className="font-light text-gray-800 text-4xl mb-28 tracking-wide ">
         login first
       </h1>
-      <label className="flex gap-4 items-center text-lg text-gray-800 font-semibold">
+      <label className="flex flex-col lg:flex-row gap-4 items-center text-lg text-gray-800 font-semibold">
         Username
         <input
           name="name"
@@ -66,7 +71,7 @@ export default function LoginCard(props) {
           type="text"
         />
       </label>
-      <label className="flex gap-4 items-center text-lg text-gray-800 font-semibold">
+      <label className="flex gap-4 flex-col lg:flex-row items-center text-lg text-gray-800 font-semibold">
         Password
         <input
           name="password"

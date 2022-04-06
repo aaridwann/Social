@@ -1,0 +1,98 @@
+[
+    {   "id":1,
+        "month":"january",
+        "data":[{"week":1,"transaction":100},
+                {"week":2,"transaction":30},
+                {"week":3,"transaction":30},
+                {"week":4,"transaction":2}
+                ]
+    },
+    {   "id":2,
+        "month":"february",
+        "data":[{"week":1,"transaction":60},
+                {"week":2,"transaction":12},
+                {"week":3,"transaction":50},
+                {"week":4,"transaction":12}
+                ]
+    },
+    {   "id":3,
+        "month":"maret",
+        "data":[{"week":1,"transaction":2},
+                {"week":2,"transaction":20},
+                {"week":3,"transaction":2},
+                {"week":4,"transaction":21}
+                ]
+    },
+    {   "id":4,
+        "month":"april",
+        "data":[{"week":1,"transaction":20},
+                {"week":2,"transaction":11},
+                {"week":3,"transaction":0},
+                {"week":4,"transaction":1}
+                ]
+    },
+    {   "id":5,
+        "month":"Mei",
+        "data":[{"week":1,"transaction":20},
+                {"week":2,"transaction":10},
+                {"week":3,"transaction":30},
+                {"week":4,"transaction":22}
+                ]
+    },
+    {   "id":6,
+        "month":"juni",
+        "data":[{"week":1,"transaction":60},
+                {"week":2,"transaction":12},
+                {"week":3,"transaction":50},
+                {"week":4,"transaction":12}
+                ]
+    },
+    {   "id":7,
+        "month":"juli",
+        "data":[{"week":1,"transaction":2},
+                {"week":2,"transaction":20},
+                {"week":3,"transaction":2},
+                {"week":4,"transaction":21}
+                ]
+    },
+    {   "id":8,
+        "month":"agustus",
+        "data":[{"week":1,"transaction":20},
+                {"week":2,"transaction":11},
+                {"week":3,"transaction":0},
+                {"week":4,"transaction":1}
+                ]
+    },
+    {   "id":9,
+        "month":"september",
+        "data":[{"week":1,"transaction":60},
+                {"week":2,"transaction":12},
+                {"week":3,"transaction":50},
+                {"week":4,"transaction":12}
+                ]
+    },
+    {   "id":10,
+        "month":"oktober",
+        "data":[{"week":1,"transaction":2},
+                {"week":2,"transaction":20},
+                {"week":3,"transaction":2},
+                {"week":4,"transaction":21}
+                ]
+    },
+    {   "id":11,
+        "month":"november",
+        "data":[{"week":1,"transaction":20},
+                {"week":2,"transaction":11},
+                {"week":3,"transaction":0},
+                {"week":4,"transaction":1}
+                ]
+    },
+    {   "id":12,
+        "month":"desember",
+        "data":[{"week":1,"transaction":20},
+                {"week":2,"transaction":10},
+                {"week":3,"transaction":30},
+                {"week":4,"transaction":22}
+                ]
+    }
+]

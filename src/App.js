@@ -1,9 +1,17 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddItem from "./AddItem";
+import Following from "./Components/Follow/Following";
+import Market from "./Components/Market/Market";
+import MyProfile from "./Components/Profile/MyProfile";
+import Registration from "./Components/Registration/Registration";
 import { AuthContext } from "./Context/AuthContext";
 import Home from "./Home";
 import Invoice from "./Invoice";
+import Chat from "./Pages/Chat";
+import NotFound from "./Pages/NotFound";
+import Profile from "./Pages/Profile";
+import Test from "./Test";
 import Timeline from "./Timeline";
 
 export const App = () => {
@@ -21,6 +29,14 @@ export const App = () => {
             <Route path="/timeline" element={<Timeline/>} options={{title: 'Timeline'}} />
             <Route path="/invoice" element={<Invoice/>} options={{title: 'Invoice'}}/>
             <Route path="/addItem" element={<AddItem/>} />
+            <Route path='/test' element={<Test/>}/>
+            <Route path='/chat' element={<Chat/>}/>
+            <Route path='/following/:id' element={<Following/>}/>
+            <Route path='/myprofile' element={<MyProfile/>}/>
+            <Route path='/profile/:id' element={<Profile/>}/>
+            <Route path='/registration' element={<Registration/>}/>
+            <Route path='/market' element={<Market/>}/>
+            <Route path='*' element={<NotFound/>}/>
           </Routes>
         </Fragment>
       </BrowserRouter>

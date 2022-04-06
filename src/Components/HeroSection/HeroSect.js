@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
+import {useNavigate} from 'react-router-dom'
 
 export default function HeroSect(props) {
   const {Auth, setAuth} = useContext(AuthContext)
-  
+  const navigate = useNavigate()
   const logout = () => {
   sessionStorage.clear();
   setAuth(null)
@@ -34,7 +35,7 @@ export default function HeroSect(props) {
               Logout
             </button>
             }
-           {!Auth &&  <button className=" text-gray-500 font-[Yantramanav] text-lg font-bold
+           {!Auth &&  <button onClick={() => navigate('/registration')} className=" text-gray-500 font-[Yantramanav] text-lg font-bold
             hover:border-2 border-pink-tua rounded-3xl px-4 duration-200
             ">Sign up</button>
             }

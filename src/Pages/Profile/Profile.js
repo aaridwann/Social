@@ -1,12 +1,12 @@
 import React, { useState, useEffect, Suspense, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { AuthContext } from '../Context/AuthContext'
-import { checkFollow } from '../Function/CheckFollow'
+import { AuthContext } from '../../Context/AuthContext'
+import { checkFollow } from '../../Function/CheckFollow'
 
-const Head = React.lazy(() => import('../Components/Profile/Head'))
-const PostContent = React.lazy(() => import('../Components/Profile/PostContent'))
-const SearchBar = React.lazy(() => import('../Components/Profile/SearchBar'))
-const BottomBar = React.lazy(() => import('../Components/Profile/BottomBar'))
+const Head = React.lazy(() => import('../Profile/Head'))
+const PostContent = React.lazy(() => import('./PostContent'))
+const SearchBar = React.lazy(() => import('./SearchBar'))
+const BottomBar = React.lazy(() => import('./BottomBar'))
 
 export default function Profile() {
     const { Auth } = useContext(AuthContext)
@@ -63,8 +63,6 @@ export default function Profile() {
                     </Suspense>
                 }
 
-
-
                 {/* Content */}
                 {loading ?
                     <p className=" flex justify-center mt-8 items-center text-slate-500 text-2xl text-center">Loading...</p>
@@ -73,7 +71,6 @@ export default function Profile() {
                         <PostContent post={postUser} />
                     </Suspense>
                 }
-
 
                 {/* Bottom Bar */}
                 <div className=" fixed bottom-0 w-full">

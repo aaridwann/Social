@@ -11,7 +11,7 @@ export default function ViewPost(props) {
     <div className='w-full flex flex-col justify-center text-slate-500 items-center h-3/4 mx-auto my-auto bg-slate-50 shadow-2xl p-4'>
             <div className='w-60 overflow-hidden flex flex-col justify-center items-center text-center'>
               <div className=' bg-center bg-cover w-full flex justify-center item-center max-h-96'>
-                <img src={props.image}/>
+                <img alt={props.image} src={props.image}/>
               </div>
                 <p className='font-light text-sm mt-6'>It is a long established fact that a reader will be distracted by the readable content</p>
 

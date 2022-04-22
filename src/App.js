@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddItem from "./AddItem";
 import Following from "./Components/Follow/Following";
 import Market from "./Components/Market/Market";
-import MyProfile from "./Components/Profile/MyProfile";
+import MyProfile from '../src/Pages/Profile/MyProfile'
 import Registration from "./Components/Registration/Registration";
 import { AuthContext } from "./Context/AuthContext";
-import Home from "./Home";
+import Home from "./Pages/Home/Home";
 import Invoice from "./Invoice";
-import Profile from "./Pages/Profile";
+import Profile from "./Pages/Profile/Profile";
 import Test from "./Test";
 import Timeline from '../src/Pages/Timeline/Timeline'
 

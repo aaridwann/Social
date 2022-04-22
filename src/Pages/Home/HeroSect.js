@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function HeroSect(props) {
-  const {Auth, setAuth} = useContext(AuthContext)
+  const { Auth, setAuth } = useContext(AuthContext)
   const navigate = useNavigate()
   const logout = () => {
-  sessionStorage.clear();
-  setAuth(null)
-   
+    sessionStorage.clear();
+    setAuth(null)
+
   }
   return (
     <div className="bg-pink-cust w-full overflow-hidden">
@@ -23,28 +24,30 @@ export default function HeroSect(props) {
           </p>
           <div className="flex flex-row gap-4 justify-end mr-10 my-4 text-white ">
             {!Auth ?
-            <button onClick={props.change}  className="bg-pink-tua rounded-xl px-5 py-1 duration-200 hover:shadow-lg
+              <button onClick={props.change} className="bg-pink-tua rounded-xl px-5 py-1 duration-200 hover:shadow-lg
             font-[Yellowtail]
              ">
-              Login
-            </button> 
-            :
-            <button onClick={() => logout()}  className="bg-pink-tua rounded-xl px-5 py-1 duration-200 hover:shadow-lg
+                Login
+              </button>
+              :
+              <button onClick={() => logout()} className="bg-pink-tua rounded-xl px-5 py-1 duration-200 hover:shadow-lg
             font-[Yellowtail]
              ">
-              Logout
-            </button>
+                Logout
+              </button>
             }
-           {!Auth &&  <button onClick={() => navigate('/registration')} className=" text-gray-500 font-[Yantramanav] text-lg font-bold
+            {!Auth && <button onClick={() => navigate('/registration')} className=" text-gray-500 font-[Yantramanav] text-lg font-bold
             hover:border-2 border-pink-tua rounded-3xl px-4 duration-200
             ">Sign up</button>
             }
           </div>
         </div>
+
+
         {/* END HERRO KIRI */}
 
-        <div className="flex h-72 w-96 lg:w-10/12 items-center bg-local col-span-2 bg-blue-700 overflow-hidden rounded-br-full rounded-tl-full ">
-          <img src="./assets/img/interior.jpg" alt="home" className="h-auto w-full lg:h-auto lg:w-full"/>
+        <div className="flex h-72 w-96 lg:w-10/12 items-center bg-local col-span-2 overflow-hidden rounded-br-full rounded-tl-full ">
+          <LazyLoadImage src="assets/img/interior.jpg" alt="home" className="h-auto w-full lg:h-auto lg:w-full" />
         </div>
       </div>
     </div>

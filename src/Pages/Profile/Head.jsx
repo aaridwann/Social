@@ -2,8 +2,8 @@ import React,{Suspense,useContext} from 'react'
 import {LazyLoadImage} from 'react-lazy-load-image-component'
 import { AuthContext } from '../../Context/AuthContext'
 import {useNavigate} from 'react-router-dom'
-const FollowButton = React.lazy(() => import('../Button/FollowButton'))
-const UnFollowButton = React.lazy(() => import('../Button/UnFollowButton'))
+const FollowButton = React.lazy(() => import('../../../src/Components/Button/FollowButton'))
+const UnFollowButton = React.lazy(() => import('../../../src/Components/Button/UnFollowButton'))
 
 
 

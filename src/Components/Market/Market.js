@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import BottomBar from '../Profile/BottomBar'
+import BottomBar from '../../Pages/Profile/BottomBar'
 
 export default function Market() {
 
@@ -21,7 +21,7 @@ export default function Market() {
                     <div className=" w-64 h-20 rounded-full shadow-md  bg-white flex flex-row items-center gap-2">
                         {/* Image */}
                             <div className="rounded-full w-24 h-24 object-cover overflow-hidden  ">
-                                <img className=" " src='https://i.pinimg.com/564x/aa/f7/29/aaf729553918dc12db99c096158c641f.jpg'/>
+                                <img alt='test' className=" " src='https://i.pinimg.com/564x/aa/f7/29/aaf729553918dc12db99c096158c641f.jpg'/>
                             </div>
                         {/* Identity */}
                             <div className='flex flex-col mn  '>

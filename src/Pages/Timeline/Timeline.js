@@ -11,8 +11,6 @@ import TopSide from './TopSide';
 import{socket,likeService} from  '../../Services/NotificationService'
 
 
-
-
 let url = 'http://192.168.100.13:8000/post/timeline'
 
 

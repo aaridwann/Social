@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { AuthContext } from '../../Context/AuthContext'
 import { dataProject } from '.././../Data/Profiledata'
-import ViewPost from '../View Post/ViewPost'
+import ViewPost from '../../Components/View Post/ViewPost'
 import { useNavigate } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 

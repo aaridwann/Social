@@ -16,7 +16,7 @@ export default function HeroSect(props) {
         {/* Herro Kiri */}
         <div className="col-span-1 items-center mx-auto justify-center">
           <h1 className="text-5xl text-white font-extrabold tracking-widest lg:tracking-lebar">
-            FLEXIBLE Testing
+            FLEXIBLE
           </h1>
           <p className="text-white tracking-lebar2 mt-4 font-semibold">
             ANYWHERE ANYTIME

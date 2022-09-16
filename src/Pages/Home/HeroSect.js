@@ -47,7 +47,7 @@ export default function HeroSect(props) {
         {/* END HERRO KIRI */}
 
         <div className="flex h-72 w-96 lg:w-10/12 items-center bg-local col-span-2 overflow-hidden rounded-br-full rounded-tl-full ">
-          <LazyLoadImage src="assets/img/interior.jpg" alt="home" className="h-auto w-full lg:h-auto lg:w-full" />
+          <LazyLoadImage src="https://i.pinimg.com/564x/94/80/9c/94809c28b0d0c76a8b8331ae36aa26d6.jpg" alt="home" className="h-auto w-full lg:h-auto lg:w-full" />
         </div>
       </div>
     </div>

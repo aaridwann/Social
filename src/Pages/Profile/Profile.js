@@ -6,7 +6,25 @@ import { checkFollow } from '../../Function/CheckFollow'
 const Head = React.lazy(() => import('../Profile/Head'))
 const PostContent = React.lazy(() => import('./PostContent'))
 const SearchBar = React.lazy(() => import('./SearchBar'))
-const BottomBar = React.lazy(() => import('./BottomBar'))
+// const BottomBar = React.lazy(() => import('./BottomBar'))
+
+
+function Search(props) {
+    return (<div className=" fixed">
+        <Suspense fallback={<p>Loading...</p>}>
+            <SearchBar search={props.stateSearch} offSearch={() => props.setStateSearch(false)} />
+        </Suspense>
+    </div>);
+}
+
+
+
+function BottomBar(props) {
+    return (<Suspense fallback={<p>Loading...</p>}>
+        <BottomBar activeSearch={() => props.setStateSearch(!props.stateSearch)} />
+    </Suspense>);
+}
+
 
 export default function Profile() {
     const { Auth } = useContext(AuthContext)
@@ -74,17 +92,11 @@ export default function Profile() {
 
                 {/* Bottom Bar */}
                 <div className=" fixed bottom-0 w-full">
-                    <Suspense fallback={<p>Loading...</p>}>
-                        <BottomBar activeSearch={() => setStateSearch(!stateSearch)} />
-                    </Suspense>
+                    <BottomBar stateSearch={stateSearch} setStateSearch={setStateSearch}></BottomBar>
                 </div>
 
                 {/* Search Section */}
-                <div className=" fixed">
-                    <Suspense fallback={<p>Loading...</p>}>
-                        <SearchBar search={stateSearch} offSearch={() => setStateSearch(false)} />
-                    </Suspense>
-                </div>
+                <Search stateSearch={stateSearch} setStateSearch={setStateSearch}></Search>
 
             </div>
 

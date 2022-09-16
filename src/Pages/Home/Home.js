@@ -17,9 +17,9 @@ export default function Home() {
       <title>Home</title>
       <Navbar className='fixed' />
       <Suspense fallback={loading}>
-        <section>
+        <section className="mx-auto h-fit pb-20">
           <HeroSect change={change} />
-          {!Auth && modalLogin && <Login change={change} />}
+          {/* {!Auth && modalLogin && <Login change={change} />} */}
           <Profile />
           <Products />
         </section>

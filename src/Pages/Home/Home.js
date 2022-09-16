@@ -19,7 +19,7 @@ export default function Home() {
       <Suspense fallback={loading}>
         <section className="mx-auto h-fit pb-20">
           <HeroSect change={change} />
-          {/* {!Auth && modalLogin && <Login change={change} />} */}
+          {!Auth && modalLogin && <Login change={change} />}
           <Profile />
           <Products />
         </section>
